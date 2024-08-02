@@ -1,0 +1,80 @@
+( ( [ a = "b" /c] | "apple" /icd + ) {3,5} ) [ c = "d" | ! e:e2 != "f" & ( ! ( g = "h" )) ]
+
+----------------------------------------------------
+
+[
+	["punctuation", "("],
+	["punctuation", "("],
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "a"]
+			]],
+			["operator", "="],
+			["regexp", ["\"b\""]],
+			["regexp-flag", [
+				["punctuation", "/"],
+				["keyword", "c"]
+			]]
+		]],
+		["punctuation", "]"]
+	]],
+	["operator", "|"],
+	["string", ["\"apple\""]],
+	["regexp-flag", [
+		["punctuation", "/"],
+		["keyword", "i"],
+		["keyword", "c"],
+		["keyword", "d"]
+	]],
+	["quantifier", ["+"]],
+	["punctuation", ")"],
+	["quantifier", [
+		["punctuation", "{"],
+		["number", "3"],
+		["punctuation", ","],
+		["number", "5"],
+		["punctuation", "}"]
+	]],
+	["punctuation", ")"],
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "c"]
+			]],
+			["operator", "="],
+			["regexp", ["\"d\""]]
+		]],
+		["operator", "|"],
+		["operator", "!"],
+		["basic-expression", [
+			["attribute", [
+				["qualifier", "e"],
+				["punctuation", ":"],
+				["identifier", "e2"]
+			]],
+			["operator", "!="],
+			["regexp", ["\"f\""]]
+		]],
+		["operator", "&"],
+		["punctuation", "("],
+		["operator", "!"],
+		["punctuation", "("],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "g"]
+			]],
+			["operator", "="],
+			["regexp", ["\"h\""]]
+		]],
+		["punctuation", ")"],
+		["punctuation", ")"],
+		["punctuation", "]"]
+	]]
+]
+
+----------------------------------------------------
+
+Testing crazy query features.

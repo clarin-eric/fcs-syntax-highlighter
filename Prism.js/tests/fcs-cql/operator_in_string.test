@@ -1,0 +1,41 @@
+"AND"
+"cat and dog"
+"cat and dog" or "hot dog"
+car or "lawn and mower"
+( apple )
+( "apple and cider" )
+( "apple" and cider)
+
+----------------------------------------------------
+
+[
+	["string", "\"AND\""],
+
+	["string", "\"cat and dog\""],
+
+	["string", "\"cat and dog\""],
+	["operator", "or"],
+	["string", "\"hot dog\""],
+
+	["string-unquoted", "car"],
+	["operator", "or"],
+	["string", "\"lawn and mower\""],
+
+	["punctuation", "("],
+	["string-unquoted", "apple"],
+	["punctuation", ")"],
+
+	["punctuation", "("],
+	["string", "\"apple and cider\""],
+	["punctuation", ")"],
+
+	["punctuation", "("],
+	["string", "\"apple\""],
+	["operator", "and"],
+	["string-unquoted", "cider"],
+	["punctuation", ")"]
+]
+
+----------------------------------------------------
+
+Test some edge cases with operators in strings etc.

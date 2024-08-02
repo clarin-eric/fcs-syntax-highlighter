@@ -1,0 +1,41 @@
+cat
+"cat"
+cat AND dog
+"grumpy cat"
+"grumpy cat" AND dog
+"grumpy cat" OR "lazy dog"
+cat AND (mouse OR "lazy dog")
+
+----------------------------------------------------
+
+[
+	["string-unquoted", "cat"],
+
+	["string", "\"cat\""],
+
+	["string-unquoted", "cat"],
+	["operator", "AND"],
+	["string-unquoted", "dog"],
+
+	["string", "\"grumpy cat\""],
+
+	["string", "\"grumpy cat\""],
+	["operator", "AND"],
+	["string-unquoted", "dog"],
+
+	["string", "\"grumpy cat\""],
+	["operator", "OR"],
+	["string", "\"lazy dog\""],
+
+	["string-unquoted", "cat"],
+	["operator", "AND"],
+	["punctuation", "("],
+	["string-unquoted", "mouse"],
+	["operator", "OR"],
+	["string", "\"lazy dog\""],
+	["punctuation", ")"]
+]
+
+----------------------------------------------------
+
+Test example queries from FCS 2.0 Core spec.

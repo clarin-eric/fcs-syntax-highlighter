@@ -1,0 +1,37 @@
+AND
+OR
+
+aNd
+Or
+
+something AND
+else OR
+"abc" AND "def"
+abc oR def
+
+OR something
+AND "rest"
+And "rest" or
+
+----------------------------------------------------
+
+[
+	["string-unquoted", "AND"],
+	["string-unquoted", "OR"],
+
+	["string-unquoted", "aNd"],
+	["string-unquoted", "Or"],
+
+	["string-unquoted", "something"], ["operator", "AND"],
+	["string-unquoted", "else"], ["operator", "OR"],
+	["string", "\"abc\""], ["operator", "AND"], ["string", "\"def\""],
+	["string-unquoted", "abc"], ["operator", "oR"], ["string-unquoted", "def"],
+
+	["string-unquoted", "OR"], ["string-unquoted", "something"],
+	["string-unquoted", "AND"], ["string", "\"rest\""],
+	["string-unquoted", "And"], ["string", "\"rest\""], ["operator", "or"]
+]
+
+----------------------------------------------------
+
+Checks for all operators. If only operator then it is probably an unquoted string, so not an operator.

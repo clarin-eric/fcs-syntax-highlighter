@@ -1,0 +1,159 @@
+"walking"
+[token = "walking"]
+"Dog" /c
+[word = "Dog" /c]
+[pos = "NOUN"]
+[pos != "NOUN"]
+[lemma = "walk"]
+"blaue|grüne" [pos = "NOUN"]
+"dogs" []{3,} "cats" within s
+[z:pos = "ADJ"]
+[z:pos = "ADJ" & q:pos = "ADJ"]
+
+----------------------------------------------------
+
+[
+	["string", ["\"walking\""]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "token"]
+			]],
+			["operator", "="],
+			["regexp", ["\"walking\""]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["string", ["\"Dog\""]],
+	["regexp-flag", [
+		["punctuation", "/"],
+		["keyword", "c"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "word"]
+			]],
+			["operator", "="],
+			["regexp", ["\"Dog\""]],
+			["regexp-flag", [
+				["punctuation", "/"],
+				["keyword", "c"]
+			]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "!="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "lemma"]
+			]],
+			["operator", "="],
+			["regexp", ["\"walk\""]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["string", ["\"blaue|grüne\""]],
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["string", ["\"dogs\""]],
+	["segment", [
+		["punctuation", "["],
+		["punctuation", "]"]
+	]],
+	["quantifier", [
+		["punctuation", "{"],
+		["number", "3"],
+		["punctuation", ","],
+		["punctuation", "}"]
+	]],
+	["string", ["\"cats\""]],
+	["within", [
+		["keyword", "within"],
+		["keyword", "s"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["qualifier", "z"],
+				["punctuation", ":"],
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"ADJ\""]]
+		]],
+		["punctuation", "]"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["qualifier", "z"],
+				["punctuation", ":"],
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"ADJ\""]]
+		]],
+		["operator", "&"],
+		["basic-expression", [
+			["attribute", [
+				["qualifier", "q"],
+				["punctuation", ":"],
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"ADJ\""]]
+		]],
+		["punctuation", "]"]
+	]]
+]
+
+----------------------------------------------------
+
+Test example queries from FCS 2.0 Core spec.

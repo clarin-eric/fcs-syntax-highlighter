@@ -1,0 +1,86 @@
+[lemma = "abc" & (pos = "NOUN" | pos = "PUNCT") ]
+
+[ ! (pos = "NOUN")]
+[ ! pos = "NOUN" ]
+[ !!!!! pos = "NOUN" ]
+
+----------------------------------------------------
+
+[
+	["segment", [
+		["punctuation", "["],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "lemma"]
+			]],
+			["operator", "="],
+			["regexp", ["\"abc\""]]
+		]],
+		["operator", "&"],
+		["punctuation", "("],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["operator", "|"],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"PUNCT\""]]
+		]],
+		["punctuation", ")"],
+		["punctuation", "]"]
+	]],
+
+	["segment", [
+		["punctuation", "["],
+		["operator", "!"],
+		["punctuation", "("],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["punctuation", ")"],
+		["punctuation", "]"]
+	]],
+	["segment", [
+		["punctuation", "["],
+		["operator", "!"],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["punctuation", "]"]
+	]],
+	["segment", [
+		["punctuation", "["],
+		["operator", "!"],
+		["operator", "!"],
+		["operator", "!"],
+		["operator", "!"],
+		["operator", "!"],
+		["basic-expression", [
+			["attribute", [
+				["identifier", "pos"]
+			]],
+			["operator", "="],
+			["regexp", ["\"NOUN\""]]
+		]],
+		["punctuation", "]"]
+	]]
+]
+
+----------------------------------------------------
+
+Basic expression in segment queries (boolean operators with braces).

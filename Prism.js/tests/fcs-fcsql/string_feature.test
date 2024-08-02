@@ -1,0 +1,85 @@
+""
+"fo\"obar"
+"foo
+bar"
+''
+'fo\'obar'
+'foo
+bar'
+"\\"
+"\ua2Cd\.\^\$\*\""
+"\\\\\"\''\""
+'\t\n 	'
+"\ \b"
+
+----------------------------------------------------
+
+[
+	["string", ["\"\""]],
+	["string", [
+		"\"fo",
+		["escape", "\\\""],
+		"obar\""
+	]],
+	["string", [
+		"\"foo",
+		["whitespace", "\r"],
+		["whitespace", "\n"],
+		"bar\""
+	]],
+	["string", ["''"]],
+	["string", [
+		"'fo",
+		["escape", "\\'"],
+		"obar'"
+	]],
+	["string", [
+		"'foo",
+		["whitespace", "\r"],
+		["whitespace", "\n"],
+		"bar'"
+	]],
+	["string", [
+		"\"",
+		["escape", "\\\\"],
+		"\""
+	]],
+	["string", [
+		"\"",
+		["escape", "\\ua2Cd"],
+		["escape", "\\."],
+		["escape", "\\^"],
+		["escape", "\\$"],
+		["escape", "\\*"],
+		["escape", "\\\""],
+		"\""
+	]],
+	["string", [
+		"\"",
+		["escape", "\\\\"],
+		["escape", "\\\\"],
+		["escape", "\\\""],
+		["escape", "\\'"],
+		"'",
+		["escape", "\\\""],
+		"\""
+	]],
+	["string", [
+		"'",
+		["escape", "\\t"],
+		["escape", "\\n"],
+		["whitespace", " "],
+		["whitespace", "\t"],
+		"'"
+	]],
+	["string", [
+		"\"",
+		["invalid-escape", "\\ "],
+		["invalid-escape", "\\b"],
+		"\""
+	]]
+]
+
+----------------------------------------------------
+
+Checks for strings.
